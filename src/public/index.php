@@ -35,7 +35,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endforeach; ?>
     </ul>
     <h2>Image :</h2>
-    <img src="/storage/image.jpg" alt="Exemple d'image">
+    <img src="data:image/jpeg;base64,<?= base64_encode(file_get_contents('../storage/skarbie.jpg')); ?> " alt="Exemple d'image">
+    <h2>Main champion</h2>
+    <img src="data:image/jpeg;base64,<?= base64_encode(file_get_contents('../storage/caitlyn.jpg')); ?> " alt="Exemple d'image">
 </body>
 
 </html>
