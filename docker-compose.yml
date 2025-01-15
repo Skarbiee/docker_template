@@ -6,6 +6,7 @@ services:
       context: ./php
     volumes:
       - ./src:/var/www/html
+      - php/000-defalt.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - "8080:80"
     networks:
