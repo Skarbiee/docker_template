@@ -5,7 +5,7 @@ services:
     build:
       context: ./php
     volumes:
-      - ./src:var/www/html
+      - ./src:/var/www/html
     ports:
       - "8080:80"
     networks:
@@ -18,7 +18,7 @@ services:
       MYSQL_DATABASE: project_db
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-    columes:
+    volumes:
       - ./mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
@@ -27,4 +27,4 @@ services:
 
 networks:
   webnet:
-    driver: bridge
+  driver: bridge
